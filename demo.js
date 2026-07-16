@@ -24,7 +24,7 @@ const scenes={en:[
 ]};
 
 let lang=(new URLSearchParams(location.search).get("lang")||localStorage.getItem("ai-office-demo-lang")||(/zh/i.test(navigator.language)?"zh":/th/i.test(navigator.language)?"th":"en"));
-if(!ui[lang])lang="en";let current=0,running=false,auto=false,autoTimer;
+if(!ui[lang])lang="en";let current=Math.max(0,Math.min(5,Number(new URLSearchParams(location.search).get("scene"))||0)),running=false,auto=false,autoTimer;
 const $=s=>document.querySelector(s);const $$=s=>[...document.querySelectorAll(s)];
 function setLanguage(next){lang=next;localStorage.setItem("ai-office-demo-lang",lang);document.documentElement.lang=lang;document.title=lang==="zh"?"AI OFFICE 产品交互体验":lang==="th"?"ประสบการณ์ AI OFFICE":"AI OFFICE Live Experience";$$('[data-i18n]').forEach(el=>{const value=ui[lang][el.dataset.i18n];if(value)el.textContent=value});$$('[data-lang]').forEach(b=>b.classList.toggle("active",b.dataset.lang===lang));$("#contactLink").href=lang==="zh"?"./zh.html#contact":lang==="th"?"./th.html#contact":"./index.html#contact";renderList();selectScene(current)}
 function renderList(){const list=$("#scenarioList");list.innerHTML="";scenes[lang].forEach((s,i)=>{const b=document.createElement("button");b.type="button";b.className="scenario-button"+(i===current?" active":"");b.innerHTML=`<span>${s.icon}</span><b>${s.name}</b><small>${s.tag}</small><i></i>`;b.addEventListener("click",()=>{stopRun();selectScene(i)});list.appendChild(b)})}
