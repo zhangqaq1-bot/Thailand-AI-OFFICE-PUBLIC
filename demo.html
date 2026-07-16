@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="theme-color" content="#0a0d0c" />
+    <title>AI OFFICE Live Experience</title>
+    <meta name="description" content="Experience how Office Claw senses, decides and acts across intelligent workplace scenarios." />
+    <link rel="icon" href="./favicon.svg" />
+    <link rel="stylesheet" href="./demo.css" />
+  </head>
+  <body>
+    <div class="demo-app">
+      <header class="demo-nav">
+        <a class="demo-brand" href="./index.html" aria-label="AI OFFICE home"><span>A</span><b>AI OFFICE</b></a>
+        <div class="demo-nav-center"><i></i><span data-i18n="live">LIVE PRODUCT EXPERIENCE</span></div>
+        <div class="demo-tools">
+          <div class="demo-langs" aria-label="Language">
+            <button type="button" data-lang="en">EN</button>
+            <button type="button" data-lang="zh">中文</button>
+            <button type="button" data-lang="th">ไทย</button>
+          </div>
+          <button class="icon-button" id="fullscreenButton" type="button" aria-label="Fullscreen">⛶</button>
+        </div>
+      </header>
+
+      <main class="demo-main">
+        <aside class="scenario-panel">
+          <div class="panel-intro">
+            <span data-i18n="choose">CHOOSE A SCENARIO</span>
+            <h1 data-i18n="title">See an intelligent space think and act.</h1>
+            <p data-i18n="subtitle">Select a real workplace task, then watch Office Claw coordinate people, devices and services.</p>
+          </div>
+          <div class="scenario-list" id="scenarioList"></div>
+          <div class="auto-control">
+            <button type="button" id="autoButton"><i></i><span data-i18n="auto">AUTO DEMO</span></button>
+            <small id="autoStatus" data-i18n="autoOff">OFF</small>
+          </div>
+        </aside>
+
+        <section class="experience-stage">
+          <div class="stage-visual">
+            <img id="sceneImage" src="./demo-space.png" alt="AI OFFICE intelligent space" />
+            <div class="visual-shade"></div>
+            <div class="space-map" aria-hidden="true">
+              <div class="map-room room-a"></div><div class="map-room room-b"></div><div class="map-room room-c"></div>
+              <span class="sensor sensor-a"></span><span class="sensor sensor-b"></span><span class="sensor sensor-c"></span>
+              <div class="map-agent"><span>OFFICE</span><b>CLAW</b></div>
+            </div>
+            <div class="scene-heading">
+              <span id="sceneIndex">01 / 06</span>
+              <h2 id="sceneTitle">Visitor arrival</h2>
+              <p id="sceneDescription">A seamless, intelligent welcome from invitation to destination.</p>
+            </div>
+            <div class="live-badge"><i></i><span data-i18n="systemOnline">SYSTEM ONLINE</span></div>
+          </div>
+
+          <div class="command-zone">
+            <div class="command-input-wrap">
+              <label for="commandInput" data-i18n="tryCommand">TRY A COMMAND</label>
+              <div class="command-input-row">
+                <span>“</span><input id="commandInput" autocomplete="off" /><span>”</span>
+                <button type="button" id="runButton"><b data-i18n="run">RUN</b><i>↗</i></button>
+              </div>
+            </div>
+            <div class="pipeline" id="pipeline">
+              <div class="pipeline-step" data-step="0"><span>01</span><i></i><b data-i18n="sense">SENSE</b><small data-i18n="senseSub">Space + context</small></div>
+              <div class="pipeline-line"></div>
+              <div class="pipeline-step" data-step="1"><span>02</span><i></i><b data-i18n="understand">UNDERSTAND</b><small data-i18n="understandSub">Intent + permission</small></div>
+              <div class="pipeline-line"></div>
+              <div class="pipeline-step" data-step="2"><span>03</span><i></i><b data-i18n="coordinate">COORDINATE</b><small data-i18n="coordinateSub">Agents + skills</small></div>
+              <div class="pipeline-line"></div>
+              <div class="pipeline-step" data-step="3"><span>04</span><i></i><b data-i18n="act">ACT</b><small data-i18n="actSub">Devices + services</small></div>
+            </div>
+          </div>
+
+          <div class="result-zone">
+            <div class="activity-card">
+              <div class="card-label"><span data-i18n="activity">LIVE ACTIVITY</span><small id="runState" data-i18n="ready">READY</small></div>
+              <div class="activity-log" id="activityLog"></div>
+            </div>
+            <div class="outcome-card">
+              <div class="card-label"><span data-i18n="outcome">BUSINESS OUTCOME</span></div>
+              <strong id="metricValue">&lt; 20 sec</strong>
+              <b id="metricLabel">visitor check-in</b>
+              <p id="sceneOutcome">Less waiting, less front-desk work and a consistent arrival experience.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="demo-footer">
+        <div><span data-i18n="architecture">OFFICE CLAW · MULTI-AGENT SPATIAL INTELLIGENCE</span><small data-i18n="privacy">LOCAL-FIRST · PERMISSION-AWARE · BRAND-AGNOSTIC</small></div>
+        <a id="contactLink" href="./index.html#contact"><span data-i18n="pilot">DISCUSS A PILOT</span> ↗</a>
+      </footer>
+    </div>
+    <script src="./demo.js"></script>
+  </body>
+</html>
