@@ -13,3 +13,8 @@
 /* Equal achievement image frames without cropping the source photos. */
 #achievements .achievement-grid .material-image{display:flex;align-items:center;justify-content:center;aspect-ratio:3 / 2;width:100%;position:relative;background:#eaf0e2;overflow:hidden}
 #achievements .achievement-grid .material-image img{display:block;position:absolute;inset:0;width:100%;height:100%;max-height:100%;object-fit:contain;object-position:center}
+
+
+/* Match product image frames while retaining every image edge. */
+#practice .material-grid .material-image{display:block;position:relative;width:100%;aspect-ratio:16 / 9;background:#101d30;overflow:hidden}
+#practice .material-grid .material-image img{display:block;position:absolute;inset:0;width:100%;height:100%;max-height:100%;object-fit:contain;object-position:center}
